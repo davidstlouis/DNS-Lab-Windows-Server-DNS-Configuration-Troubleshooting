@@ -42,9 +42,7 @@ I used `ipconfig` to identify the private IPv4 address of my Windows Server.
 ipconfig
 ```
 
-### Screenshot
-<!-- Drag your Server ipconfig screenshot here -->
-
+<img width="1470" height="956" alt="Screenshot 2026-10-05 at 8 08 08 PM" src="https://github.com/user-attachments/assets/7bc8248b-f39f-442b-a515-2698f6bfa090" />
 ---
 
 ## Step 2: Verify DNS Server
