@@ -1,3 +1,4 @@
+
 # Windows Server DNS Configuration & Troubleshooting Lab
 
 ## Project Overview
@@ -88,8 +89,8 @@ fileserver.davidlab.local
 
 Both records point to the private IPv4 address of my Windows Server.
 
-### Screenshot
-<!-- Drag your DNS records screenshot here -->
+<img width="1470" height="956" alt="Screenshot 2026-10-06 at 4 26 50 PM" src="https://github.com/user-attachments/assets/a6bb3635-4dac-4a8c-86cd-4e26841e38a5" />
+
 
 ---
 
@@ -103,8 +104,7 @@ I verified the configuration with:
 ipconfig /all
 ```
 
-### Screenshot
-<!-- Drag your Windows 10 DNS configuration screenshot here -->
+<img width="1470" height="956" alt="Screenshot 2026-10-06 at 4 30 40 PM" src="https://github.com/user-attachments/assets/49f6365f-83c6-4190-96ed-3f05b8cf5f04" />
 
 ---
 
@@ -120,6 +120,7 @@ I then tested both DNS records:
 
 ```cmd
 nslookup server01.davidlab.local
+
 ```
 
 ```cmd
@@ -134,14 +135,15 @@ ping server01.davidlab.local
 
 The Windows 10 client successfully resolved the hostname to the correct server IP address.
 
-### Screenshot
-<!-- Drag your successful nslookup screenshot here -->
-
+<img width="1470" height="956" alt="Screenshot 2026-10-06 at 4 34 12 PM" src="https://github.com/user-attachments/assets/365a7adc-4a83-4b11-a5e3-852851b08f08" />
 ---
 
 ## Step 7: DNS Troubleshooting
 
 To simulate a DNS issue, I temporarily configured the Windows 10 client with an incorrect DNS server.
+
+<img width="1470" height="956" alt="Screenshot 2026-10-06 at 4 43 13 PM" src="https://github.com/user-attachments/assets/bb1003d5-e698-4f06-8a9e-d0fca74f1354" />
+
 
 I checked the client's configuration with:
 
@@ -157,6 +159,7 @@ nslookup server01.davidlab.local
 
 After identifying the incorrect DNS server configuration, I restored the correct DNS server and cleared the DNS cache:
 
+
 ```cmd
 ipconfig /flushdns
 ```
@@ -169,12 +172,10 @@ nslookup server01.davidlab.local
 
 The hostname successfully resolved after correcting the DNS configuration.
 
-### Screenshot
-<!-- Drag your troubleshooting screenshot here -->
+<img width="1470" height="956" alt="Screenshot 2026-10-06 at 4 39 42 PM" src="https://github.com/user-attachments/assets/d0f071b6-0a89-48a7-b502-6be4c5631809" />
 
 ---
 
-## Skills Demonstrated
 
 - Windows Server Administration
 - DNS Configuration
