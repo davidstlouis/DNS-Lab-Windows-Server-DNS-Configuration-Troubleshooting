@@ -38,13 +38,13 @@ Windows Server 2022
 
 I used `ipconfig` to identify the private IPv4 address of my Windows Server.
 
+
 ```cmd
 ipconfig
 ```
 
-### Screenshot
-<!-- Drag your Server ipconfig screenshot below this line -->
 
+<img width="1470" height="956" alt="Screenshot 2026-10-05 at 8 08 08 PM" src="https://github.com/user-attachments/assets/7bc8248b-f39f-442b-a515-2698f6bfa090" />
 
 ---
 
