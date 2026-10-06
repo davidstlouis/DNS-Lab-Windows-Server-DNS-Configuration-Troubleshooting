@@ -142,8 +142,7 @@ The Windows 10 client successfully resolved the hostname to the correct server I
 
 To simulate a DNS issue, I temporarily configured the Windows 10 client with an incorrect DNS server.
 
-<img width="1470" height="956" alt="Screenshot 2026-10-06 at 4 43 13 PM" src="https://github.com/user-attachments/assets/bb1003d5-e698-4f06-8a9e-d0fca74f1354" />
-
+<img width="1470" height="956" alt="Screenshot 2026-10-06 at 4 39 42 PM" src="https://github.com/user-attachments/assets/d0f071b6-0a89-48a7-b502-6be4c5631809" />
 
 I checked the client's configuration with:
 
@@ -172,7 +171,8 @@ nslookup server01.davidlab.local
 
 The hostname successfully resolved after correcting the DNS configuration.
 
-<img width="1470" height="956" alt="Screenshot 2026-10-06 at 4 39 42 PM" src="https://github.com/user-attachments/assets/d0f071b6-0a89-48a7-b502-6be4c5631809" />
+<img width="1470" height="956" alt="Screenshot 2026-10-06 at 4 43 13 PM" src="https://github.com/user-attachments/assets/bb1003d5-e698-4f06-8a9e-d0fca74f1354" />
+
 
 ---
 
