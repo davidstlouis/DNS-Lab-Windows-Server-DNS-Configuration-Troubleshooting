@@ -59,9 +59,7 @@ Server Manager
 
 I verified that the DNS service was available before beginning the DNS configuration.
 
-### Screenshot
-<!-- Drag your DNS Manager screenshot here -->
-
+<img width="1470" height="956" alt="Screenshot 2026-10-05 at 8 21 05 PM" src="https://github.com/user-attachments/assets/ea79aedb-bf66-466b-9aa6-e2483f4416e3" />
 ---
 
 ## Step 3: Create a Forward Lookup Zone
@@ -74,8 +72,8 @@ davidlab.local
 
 This zone allows my DNS server to manage DNS records for the lab environment.
 
-### Screenshot
-<!-- Drag your Forward Lookup Zone screenshot here -->
+<img width="1470" height="956" alt="Screenshot 2026-10-05 at 8 20 21 PM" src="https://github.com/user-attachments/assets/8ed9c02d-9918-498c-920e-f653f4e264a5" />
+
 
 ---
 
