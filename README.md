@@ -1,20 +1,23 @@
-# Windows Server DNS Lab
+# Windows Server DNS Configuration & Troubleshooting Lab
 
 ## Project Overview
 
-In this lab, I configured a basic **DNS environment** using Windows Server 2022 and Windows 10 Enterprise virtual machines in Microsoft Azure.
+In this lab, I configured a **DNS server using Windows Server 2022** and connected a **Windows 10 Enterprise client** to it in Microsoft Azure.
 
-The goal was to configure a DNS server, create DNS records, connect a Windows client to the DNS server, and troubleshoot DNS resolution.
+I created a custom DNS zone, added DNS records, tested name resolution, and simulated a DNS issue to practice troubleshooting.
 
 ## Technologies Used
 
 - Microsoft Azure
-- Windows Server 2022
+- Windows Server 2022 Datacenter: Azure Edition
 - Windows 10 Enterprise
 - DNS Manager
 - Command Prompt
+- TCP/IP & DNS
 
-## Lab Setup
+---
+
+## Lab Environment
 
 ```text
 Windows 10 Enterprise
@@ -29,9 +32,25 @@ Windows Server 2022
     davidlab.local
 ```
 
-## 1. Install DNS Server
+---
 
-On Windows Server 2022, I installed the **DNS Server** role using Server Manager.
+## Step 1: Server Network Configuration
+
+I used `ipconfig` to identify the private IPv4 address of my Windows Server.
+
+```cmd
+ipconfig
+```
+
+### Screenshot
+<!-- Drag your Server ipconfig screenshot below this line -->
+
+
+---
+
+## Step 2: Install DNS Server
+
+Using **Server Manager**, I installed the DNS Server role on Windows Server 2022.
 
 ```text
 Server Manager
@@ -41,40 +60,72 @@ Server Manager
 → Install
 ```
 
-## 2. Create DNS Zone
+I then opened **DNS Manager** to begin configuring the server.
 
-Using DNS Manager, I created a new Primary Forward Lookup Zone:
+### Screenshot
+<!-- Drag your DNS Manager screenshot below this line -->
+
+
+---
+
+## Step 3: Create a Forward Lookup Zone
+
+I created a new **Primary Forward Lookup Zone** named:
 
 ```text
 davidlab.local
 ```
 
-I then created DNS A records:
+This zone allows my DNS server to resolve hostnames within my lab environment.
+
+### Screenshot
+<!-- Drag your Forward Lookup Zone screenshot below this line -->
+
+
+---
+
+## Step 4: Create DNS A Records
+
+I created two DNS A records:
 
 ```text
-server01.davidlab.local → Server IP Address
-fileserver.davidlab.local → Server IP Address
+server01.davidlab.local
+fileserver.davidlab.local
 ```
 
-## 3. Configure Windows 10
+Both records point to the private IPv4 address of my Windows Server.
 
-I configured the Windows 10 VM to use the private IP address of my Windows Server as its **Preferred DNS Server**.
+### Screenshot
+<!-- Drag your DNS records screenshot below this line -->
 
-I verified the configuration with:
+
+---
+
+## Step 5: Configure the Windows 10 Client
+
+I configured the Windows 10 VM to use the **Windows Server's private IP address as its Preferred DNS Server**.
+
+I verified the configuration using:
 
 ```cmd
 ipconfig /all
 ```
 
-## 4. Test DNS
+### Screenshot
+<!-- Drag your Windows 10 DNS configuration screenshot below this line -->
 
-I cleared the DNS cache:
+
+---
+
+## Step 6: Test DNS Resolution
+
+I cleared the Windows DNS cache:
 
 ```cmd
 ipconfig /flushdns
 ```
 
-Then tested name resolution:
+Then I tested both DNS records:
 
 ```cmd
 nslookup server01.davidlab.local
@@ -90,33 +141,74 @@ I also tested hostname resolution with:
 ping server01.davidlab.local
 ```
 
-## Troubleshooting
+The client successfully resolved the hostname to the correct server IP address.
 
-I simulated a DNS problem by configuring the client with an incorrect DNS server.
+### Screenshot
+<!-- Drag your successful nslookup screenshot below this line -->
 
-I used:
+
+---
+
+## Step 7: DNS Troubleshooting
+
+To practice troubleshooting, I intentionally configured the Windows 10 client with an incorrect DNS server.
+
+I then used:
 
 ```cmd
 ipconfig /all
+```
+
+and:
+
+```cmd
 nslookup server01.davidlab.local
 ```
 
-After identifying the incorrect DNS configuration, I changed the client back to the correct DNS server and ran:
+to identify the DNS issue.
+
+After finding the incorrect DNS configuration, I restored the correct DNS server and cleared the DNS cache:
 
 ```cmd
 ipconfig /flushdns
+```
+
+I tested the DNS record again:
+
+```cmd
 nslookup server01.davidlab.local
 ```
 
-The hostname successfully resolved to the correct IP address.
+The hostname successfully resolved after correcting the DNS configuration.
+
+### Screenshot
+<!-- Drag your troubleshooting screenshot below this line -->
+
+
+---
 
 ## Skills Demonstrated
 
 - Windows Server Administration
-- DNS Configuration
+- DNS Server Configuration
 - DNS A Records
-- TCP/IP Networking
+- Forward Lookup Zones
 - Microsoft Azure
+- TCP/IP Networking
+- Windows Client Configuration
 - `nslookup`
 - `ipconfig`
+- DNS Troubleshooting
 - Network Troubleshooting
+
+---
+
+## What I Learned
+
+This lab helped me understand how DNS translates hostnames into IP addresses and how Windows clients communicate with DNS servers.
+
+I also gained hands-on experience using tools such as `nslookup` and `ipconfig` to identify and resolve DNS configuration issues.
+
+---
+
+
